@@ -1,4 +1,4 @@
-#include "2primetools.c"
+#include "primetools.c"
 #include <stdio.h>
 
 #define NUMBERARG 600851475143
