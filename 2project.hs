@@ -6,4 +6,5 @@ evenSum max = fn fibs where
             then even + fn (rest)
             else 0
 
-main = print $ evenSum 4000000
+let problemMax = 4000000
+in main = print $ evenSum problemMax

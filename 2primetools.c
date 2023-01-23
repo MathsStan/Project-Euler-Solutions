@@ -11,21 +11,18 @@ primes are stored in a large array of ints (so a bound of 2^31 - 1 for the large
 */
 enum bool {FALSE, TRUE};
 
-int primes[MAXPRIMES] = {2, 0};
+int primes[MAXPRIMES] = {2};
 int discovered_primes_count = 1;
 
 
-int getnthprime(int n) {
+int getnthprime(int n) { //not safe whatsoever! (Cannot handle primes over an int)
     int newprime, primeindex;
 
     if (n <= discovered_primes_count) {
-        //printf("No need to calculate more primes! We have discovered %d primes already. ", discovered_primes_count);
         return primes[n - 1];
     }
 
-    //printf("AAH! We need new primes!\n");
     for (newprime = primes[discovered_primes_count - 1] + 1; n > discovered_primes_count; newprime++) {
-        //printf("newprime = %d\n", newprime);
         for (primeindex = 0; primeindex < discovered_primes_count; primeindex++) {
             if (newprime % primes[primeindex] == 0)
                 break;
